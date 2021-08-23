@@ -1,0 +1,5 @@
+[[plugins]]
+name = "Planet"
+folder = "planet" # This is not required if the folder is the same as the plugin name.
+description = "Planet plugin. Tells you which planet you are probably on."
+min_version = "v0.1.0"
