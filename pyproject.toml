@@ -1,3 +1,5 @@
+# NOTE: THIS FILE IS ONLY USED FOR DEVELOPMENT
+# ALL PLUGINS HAVE THEIR OWN CONFIGURATION, THIS IS FULL REPO SETTINGS
 [tool.poetry]
 name = "addons"
 version = "0.1.0"
@@ -22,17 +24,8 @@ pre-commit = "~=2.1"
 taskipy = "^1.6.0"
 # linting
 black = "^21.7b0"
-flake8 = "~=3.8"
-flake8-annotations = "~=2.3"
-flake8-bandit = "^2.1.2"
-flake8-bugbear = "~=20.1"
-flake8-docstrings = "~=1.5"
-flake8-isort = "^4.0.0"
-flake8-string-format = "~=0.3"
-flake8-tidy-imports = "~=4.1"
-flake8-todo = "~=0.7"
 isort = "^5.9.2"
-pep8-naming = "~=0.11"
+
 
 [tool.black]
 line-length = 110
@@ -41,6 +34,6 @@ include = '\.pyi?$'
 
 [tool.taskipy.tasks]
 black = { cmd = "black --check .", help = "dry run of black" }
-flake8 = { cmd = "python -m flake8", help = "Lints code with flake8" }
+flake8 = { cmd = "task lint flake8", help = "Lints code with flake8" }
 lint = { cmd = "pre-commit run --all-files", help = "Checks all files for CI errors" }
 precommit = { cmd = "pre-commit install --install-hooks", help = "Installs the precommit hook" }
