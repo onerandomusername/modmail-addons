@@ -28,12 +28,3 @@ per-file-ignores=
     tests/*:,ANN,S101,F401
     docs.py:B008
     modmail/utils/threads/__init__.py:F401
-
-[isort]
-profile = black
-multi_line_output=5
-include_trailing_comma=True
-force_grid_wrap=0
-use_parentheses=True
-ensure_newline_before_comments=True
-line_length=110
