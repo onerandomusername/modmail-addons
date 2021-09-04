@@ -4,11 +4,12 @@ import logging
 from typing import TYPE_CHECKING
 
 from discord.ext import commands
-from modmail.plugin_helpers import PluginCog
+from discord.ext.commands import Context
+from modmail.plugins import PluginCog
 
 if TYPE_CHECKING:
-    from discord.ext.commands import Context
-    from modmail.plugin_helpers import ModmailBot, ModmailLogger
+    from modmail.bot import ModmailBot
+    from modmail.log import ModmailLogger
 
 log: ModmailLogger = logging.getLogger(__name__)
 
