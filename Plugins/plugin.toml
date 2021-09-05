@@ -3,3 +3,7 @@ name = "Planet"
 folder = "planet" # This is not required if the folder is the same as the plugin name.
 description = "Planet plugin. Tells you which planet you are probably on."
 min_bot_version = "v0.1.0"
+
+[[plugins]]
+name = "Internal Eval"
+folder = 'internal_eval'
