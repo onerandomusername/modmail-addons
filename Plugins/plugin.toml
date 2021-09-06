@@ -1,7 +1,7 @@
 [[plugins]]
-name = "Mars" # This is not required if the folder is the same as the plugin name.
-folder = "do-names-even-matter"
-description = "Planet plugin. Tells you which planet you are probably on."
+name = "The Solar System" # This is not required if the name is the same as the plugin folder.
+folder = "solar_system"
+description = "The Solar System exists to help you know what planet your feet are touching right now."
 min_bot_version = "v0.1.0"
 
 [[plugins]]

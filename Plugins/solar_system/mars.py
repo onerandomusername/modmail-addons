@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 log: ModmailLogger = logging.getLogger(__name__)
 
 
-class Planet(PluginCog):
+class Mars(PluginCog):
     """This is a planet."""
 
     def __init__(self, bot: ModmailBot):
@@ -24,12 +24,12 @@ class Planet(PluginCog):
         self.bot = bot
 
     @commands.command()
-    async def world(self, ctx: Context) -> None:
+    async def mars(self, ctx: Context) -> None:
         """Tell you what planet you are on."""
         log.debug(f"The alien {ctx.author} has requested to know what planet they are on.")
-        await ctx.send("earth")
+        await ctx.send("not earth, mars!")
 
 
 def setup(bot: ModmailBot) -> None:
     """Add the Planet plugin to the bot."""
-    bot.add_cog(Planet(bot))
+    bot.add_cog(Mars(bot))
