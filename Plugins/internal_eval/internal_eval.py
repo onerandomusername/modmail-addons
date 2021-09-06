@@ -27,11 +27,13 @@ from typing import TYPE_CHECKING, Optional, Tuple, Union
 import discord
 from discord.ext import commands
 from discord.ext.commands import Context
+
 from modmail.plugins import PluginCog
 
 
 if TYPE_CHECKING:
     from discord import Message
+
     from modmail.bot import ModmailBot
     from modmail.log import ModmailLogger
 

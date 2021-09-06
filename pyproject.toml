@@ -41,6 +41,8 @@ ensure_newline_before_comments=true
 line_length=110
 atomic=true
 lines_after_imports=2
+known_first_party='modmail'
+known_third_party='discord'
 
 [tool.taskipy.tasks]
 black = { cmd = "black --check .", help = "dry run of black" }
