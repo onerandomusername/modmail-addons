@@ -7,6 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import Context
 from modmail.plugins import PluginCog
 
+
 if TYPE_CHECKING:
     from modmail.bot import ModmailBot
     from modmail.log import ModmailLogger

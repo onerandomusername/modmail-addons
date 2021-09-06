@@ -40,7 +40,7 @@ use_parentheses=true
 ensure_newline_before_comments=true
 line_length=110
 atomic=true
-add_imports=['from __future__ import annotations']
+lines_after_imports=2
 
 [tool.taskipy.tasks]
 black = { cmd = "black --check .", help = "dry run of black" }
