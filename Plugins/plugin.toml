@@ -1,6 +1,6 @@
 [[plugins]]
-name = "Planet"
-folder = "planet" # This is not required if the folder is the same as the plugin name.
+name = "Planet" # This is not required if the name is the same as the folder name.
+folder = "planet" # the only required key.
 description = "Planet plugin. Tells you which planet you are probably on."
 min_bot_version = "v0.1.0"
 
