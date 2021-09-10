@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from discord.ext import commands
 from discord.ext.commands import Context
 
-from modmail.plugins import PluginCog
+from modmail.addons.helpers import PluginCog
 
 
 if TYPE_CHECKING:
