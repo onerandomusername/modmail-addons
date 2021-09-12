@@ -1,9 +1,14 @@
 [[plugins]]
-name = "Planet" # This is not required if the name is the same as the folder name.
-folder = "planet" # the only required key.
+name = "Planet"                                                            # This is not required if the name is the same as the folder name.
+folder = "planet"                                                          # the only required key.
 description = "Planet plugin. Tells you which planet you are probably on."
 min_bot_version = "v0.1.0"
 
 [[plugins]]
 name = "Internal Eval"
 folder = 'internal_eval'
+
+[[plugins]]
+name = 'Git Info'
+folder = 'git'
+dependencies = ['dulwich~=0.20.0']
