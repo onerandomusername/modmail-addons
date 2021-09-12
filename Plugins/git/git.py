@@ -1,6 +1,7 @@
 import logging
 from typing import TYPE_CHECKING
 
+import arrow
 import discord
 from discord.ext import commands
 from discord.ext.commands import Context
@@ -16,6 +17,8 @@ if TYPE_CHECKING:
 EXT_METADATA = ExtMetadata()
 
 logger: modmail.ModmailLogger = logging.getLogger(__name__)
+
+BASE_REPO_URL = "https://github.com/discord-modmail/modmail"
 
 
 class GitCog(PluginCog):
@@ -33,28 +36,32 @@ class GitCog(PluginCog):
         commit: "Commit" = self.repo[head]
 
         current_branch = porcelain.active_branch(self.repo)
-        embed = discord.Embed(title="Current Repo")
-        embed.url = f"https://github.com/discord-modmail/modmail/tree/{current_branch.decode()}"
+        embed = discord.Embed(title="Bot Repository Info")
+        embed.url = f"{BASE_REPO_URL}/tree/{head.decode()}"
+
         commit_info = {
             "Message": f"```diff\n{commit.message.decode().strip()}\n```",
-            "SHA": head.decode(),
-            "Author": commit.author.decode(),
+            "SHA": f"{head.decode()}",
+            "Author": f"`{commit.author.decode()}`",
         }
         branch_info = {
-            "Tree": current_branch.decode(),
+            "Tree": f"[`{current_branch.decode()}`]({BASE_REPO_URL}/tree/{current_branch.decode()})",
         }
+        commit_info["SHA"] = f'[`{commit_info["SHA"]}`]({BASE_REPO_URL}/commit/{commit_info["SHA"]})'
+        branch_embed_info = ""
+        for k, v in branch_info.items():
+            v = v.strip()
+            branch_embed_info += f"{k}: {v}\n"
+        embed.add_field(name="Current Branch", value=branch_embed_info, inline=False)
 
         commit_embed_info = ""
         for k, v in commit_info.items():
             v = v.strip()
             commit_embed_info += f"{k}: {v}\n"
-        embed.add_field(name="Commit", value=commit_embed_info)
+        embed.add_field(name="Latest Commit", value=commit_embed_info, inline=False)
 
-        branch_embed_info = ""
-        for k, v in branch_info.items():
-            v = v.strip()
-            branch_embed_info += f"{k}: {v}\n"
-        embed.add_field(name="Branch", value=branch_embed_info)
+        embed.set_footer(text="Last commit at")
+        embed.timestamp = arrow.get(commit.commit_time).datetime
 
         await ctx.send(embed=embed)
 

@@ -11,4 +11,4 @@ folder = 'internal_eval'
 [[plugins]]
 name = 'Git Info'
 folder = 'git'
-dependencies = ['dulwich~=0.20.0']
+dependencies = ['dulwich~=0.20.0', "arrow"]
