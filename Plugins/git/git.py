@@ -36,7 +36,7 @@ class GitCog(PluginCog):
         embed = discord.Embed(title="Current Repo")
         embed.url = f"https://github.com/discord-modmail/modmail/tree/{current_branch.decode()}"
         commit_info = {
-            "Message": commit.message.decode(),
+            "Message": f"```diff\n{commit.message.decode().strip()}\n```",
             "SHA": head.decode(),
             "Author": commit.author.decode(),
         }
